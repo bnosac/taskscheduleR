@@ -2,6 +2,7 @@
 
 export(taskcheduler_runnow)
 export(taskcheduler_stop)
+export(taskschedulerAddin)
 export(taskscheduler_create)
 export(taskscheduler_delete)
 export(taskscheduler_ls)

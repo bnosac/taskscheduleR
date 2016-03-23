@@ -72,7 +72,9 @@ taskscheduler_create <- function(taskname = basename(rscript),
                                  rscript_args = "",
                                  schtasks_extra = "",
                                  debug = FALSE){
-  stopifnot(file.exists(rscript))
+  if(!file.exists(rscript)){
+    stop(sprintf("File %s does not exist", rscript))
+  }
   if(basename(rscript) == rscript){
     warning("Filename does not include the full path, provide %s as full path including the directory", task)
   }

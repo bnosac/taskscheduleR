@@ -15,5 +15,7 @@ Imports:
     tools
 VignetteBuilder: knitr
 Suggests:
-  knitr
+  knitr,
+  miniUI,
+  shiny
 RoxygenNote: 5.0.1
