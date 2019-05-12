@@ -116,6 +116,10 @@ taskscheduler_create <- function(taskname = basename(rscript),
                                  rscript_args = "",
                                  schtasks_extra = "",
                                  debug = FALSE){
+  if (grepl("\\\\R\\\\R-", Sys.getenv("PATH"))) {
+    Rexe <- "Rscript"
+  }
+  
   if(!file.exists(rscript)){
     stop(sprintf("File %s does not exist", rscript))
   }
