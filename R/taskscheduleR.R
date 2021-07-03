@@ -122,6 +122,7 @@ taskscheduler_create <- function(taskname = basename(rscript),
   if(basename(rscript) == rscript){
     warning("Filename does not include the full path, provide %s as full path including the directory", task)
   }
+  if(grepl("^\\~", rscript)) rscript <- path.expand(rscript)
   schedule <- match.arg(schedule)
   if("*" %in% days){
     days <- "*"
